@@ -21,7 +21,7 @@ const Sidebar = () => {
   };
 
   return (
-    <aside className="w-20 bg-white h-screen border-r p-4 text-sm">
+    <aside className="w-20 bg-white h-screen border-r p-4">
       <ul className="space-y-2">
         {menuItems.map((item) => (
           <li key={item.title}>
