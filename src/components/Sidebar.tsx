@@ -1,52 +1,155 @@
-import { useState } from 'react';
+// import { FC, useState } from "react";
+// import sidebar from './images/sidebar.svg';
 
-type MenuItem = {
+// interface SidebarItem {
+//   title: string;
+//   children: string[];
+// }
+
+// const sidebarItems: SidebarItem[] = [
+//   {
+//     title: "Smart Procurement",
+//     children: ["Pending List"],
+//   },
+//   {
+//     title: "Auto DO",
+//     children: ["Raise Request"],
+//   },
+//   {
+//     title: "Change DO",
+//     children: ["MIS"],
+//   },
+//   {
+//     title: "RCS System",
+//     children: ["Pending List"],
+//   },
+//   {
+//     title: "Online Certificate System",
+//     children: ["Raise Request"],
+//   },
+// ];
+
+// const Sidebar: FC = () => {
+//     const [expanded, setExpanded] = useState<boolean>(false);
+//     const [openItemIndex, setOpenItemIndex] = useState<number | null>(null);
+
+//     const toggleItem = (index: number) => {
+//         setOpenItemIndex(prev => (prev === index ? null : index));
+//     };
+
+//     return(
+//         <div className={`ml-0 h-screen border-r-2 border-r-gray-300 h-100 transition-all duration-300 hover:bg-gray-100 $(expanded? 'w-64' : 'w-5 border-none') md:fixed md:left-10`}>
+//             <button className="w-10 pr-3 md:w-20 md:pr-5" onClick={() => {setExpanded(!expanded)}}>
+//                 <img src={sidebar} alt="sidebar" />
+//             </button>
+//             <div className="flex flex-col items-center">
+//                 {sidebarItems.map((item, index) => (
+//                     <button key={index} className="p-5 md:text-xl hover:bg-gray-200">
+//                         {expanded && item.title}
+//                         {expanded && (
+//                             <span>{openItemIndex === index ? '-' : '+'}</span>
+//                         )}
+//                     </button>
+
+//                     {expanded && openItemIndex === index && (
+//                         <div className="ml-6 mt-1 space-y-1">
+//                             {item.children.map((child, cIndex) => (
+//                             <a
+//                                 key={cIndex}
+//                                 href="#"
+//                                 className="block px-2 py-1 text-sm text-gray-600 hover:text-black"
+//                             >
+//                                 {child}
+//                             </a>
+//                             ))}
+//                         </div>
+//                     )}
+//                 ))}
+//             </div>
+//         </div>
+//     )
+// }
+
+// export default Sidebar;
+
+import { FC, useState } from "react";
+import sidebar from './images/sidebar.svg';
+
+interface SidebarItem {
   title: string;
-  children?: string[];
-};
+  children: string[];
+}
 
-const menuItems: MenuItem[] = [
-  { title: 'Smart Procurement', children: ['Pending List'] },
-  { title: 'Auto DO', children: ['Raise Request'] },
-  { title: 'Change DO', children: ['MIS'] },
-  { title: 'RCS System', children: ['Pending List'] },
-  { title: 'Online Certificate System', children: ['Raise Request'] },
+const sidebarItems: SidebarItem[] = [
+  {
+    title: "Smart Procurement",
+    children: ["Pending List"],
+  },
+  {
+    title: "Auto DO",
+    children: ["Raise Request"],
+  },
+  {
+    title: "Change DO",
+    children: ["MIS"],
+  },
+  {
+    title: "RCS System",
+    children: ["Pending List"],
+  },
+  {
+    title: "Online Certificate System",
+    children: ["Raise Request"],
+  },
 ];
 
-const Sidebar = () => {
-  const [openItem, setOpenItem] = useState<string | null>(null);
+const Sidebar: FC = () => {
+  const [expanded, setExpanded] = useState<boolean>(false);
+  const [openItemIndex, setOpenItemIndex] = useState<number | null>(null);
 
-  const toggleItem = (title: string) => {
-    setOpenItem(prev => (prev === title ? null : title));
+  const toggleItem = (index: number) => {
+    setOpenItemIndex(prev => (prev === index ? null : index));
   };
 
   return (
-    <aside className="w-20 bg-white h-screen border-r p-4">
-      <ul className="space-y-2">
-        {menuItems.map((item) => (
-          <li key={item.title}>
-            <div
-              className="cursor-pointer font-medium hover:text-blue-600"
-              onClick={() => toggleItem(item.title)}
+    <div
+      className={`ml-0 h-screen border-r-2 border-r-gray-300 transition-all duration-300 hover:bg-gray-100
+        ${expanded ? 'w-64' : 'w-15 border-none'}
+        md:fixed md:left-10
+      `}
+    >
+      <button className="w-10 pr-3 md:w-20 md:pr-5 md:pb-8" onClick={() => setExpanded(!expanded)}>
+        <img src={sidebar} alt="sidebar" />
+      </button>
+
+      <div className="flex flex-col items-start mt-4">
+        {sidebarItems.map((item, index) => (
+          <div key={index} className="w-full">
+            <button
+              onClick={() => toggleItem(index)}
+              className="flex items-center justify-between w-full px-4 py-2 text-left hover:bg-gray-200 md:text-xl md:p-5"
             >
-              {item.title}
-            </div>
-            {openItem === item.title && item.children && (
-              <ul className="ml-4 mt-1 space-y-1 text-gray-600">
-                {item.children.map((child) => (
-                  <li
-                    key={child}
-                    className="cursor-pointer hover:text-blue-500"
+              <span className={`${expanded ? '' : 'sr-only'}`}>{item.title}</span>
+              {expanded && <span>{openItemIndex === index ? '-' : '+'}</span>}
+            </button>
+
+            {expanded && openItemIndex === index && (
+              <div className="ml-6 mt-1 space-y-1">
+                {item.children.map((child, cIndex) => (
+                  <a
+                    key={cIndex}
+                    href="#"
+                    className="block px-2 py-1 text-sm text-gray-600 hover:text-black md:text-lg"
                   >
                     {child}
-                  </li>
+                  </a>
                 ))}
-              </ul>
+              </div>
             )}
-          </li>
+          </div>
         ))}
-      </ul>
-    </aside>
+      </div>
+    </div>
   );
 };
 
