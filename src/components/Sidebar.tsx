@@ -114,7 +114,7 @@ const Sidebar: FC = () => {
   return (
     <div
       className={`ml-0 h-screen border-r-2 border-r-gray-300 transition-all duration-300 hover:bg-gray-100
-        ${expanded ? 'w-64' : 'w-15 border-none'}
+        ${expanded ? 'w-64 md:w-75' : 'w-10 md:w-15 -ml-5 border-none'}
         md:fixed md:left-10
       `}
     >
