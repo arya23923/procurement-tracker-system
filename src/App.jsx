@@ -1,13 +1,16 @@
 import './App.css'
 import Header from './components/Header';
 import Sidebar from './components/Sidebar'
-import { useState } from 'react';
+import Shortcut from './components/Shortcut'
 
 function App() {
   return (
     <div className='flex'>
       <Sidebar />
-      <Header />
+      <div>
+        <Header />
+        <Shortcut />
+      </div>
     </div>
   )
 }

@@ -2,8 +2,8 @@ import { FC } from "react";
 
 const Shortcut :FC = () => {
     return(
-        <div>
-
+        <div className="border border-gray-300 w-full">
+            <p>Shortcut Section</p>
         </div>
     )
 }
