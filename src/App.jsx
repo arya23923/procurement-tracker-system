@@ -9,7 +9,9 @@ function App() {
       <Sidebar />
       <div>
         <Header />
-        <Shortcut />
+        <div>
+          <Shortcut />
+        </div>
       </div>
     </div>
   )
