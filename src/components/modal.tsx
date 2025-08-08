@@ -3,9 +3,9 @@ import React, {FC} from "react";
 const Modal : FC = () => {
     return(
          <div className="fixed inset-0 bg-black/75 z-10 flex items-center justify-center">
-            <div className="bg-white flex justify-between p-6 rounded-lg w-40">
+            <div className="bg-white flex justify-between p-6 rounded-lg w-60">
                 <p>User details</p>
-                <button className="bg-gray">x</button>
+                <button className="bg-blue-500 rounded-full p-2">x</button>
             </div>
         </div>
     )
