@@ -7,7 +7,7 @@ const Shortcut :FC = () => {
             <div className="flex justify-around items-center border border-gray-300 p-2 rounded-lg text-sm md:text-xl md:p-5">
                 <a href="#" className="bg-gray-200 p-3 rounded-lg">Pending List</a>
                 <a href="#" className="bg-gray-200 p-3 rounded-lg">Raise Request</a>
-                <a href="#" className="bg-gray-200 p-3 rounded-lg">MIS</a>
+                <a href="#" className="bg-gray-200 p-3 rounded-lg md:pr-8 md:pl-8">MIS</a>
             </div>
         </div>
     )
