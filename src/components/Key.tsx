@@ -1,16 +1,44 @@
-import { FC } from "react";
+import { FC, useState, useEffect } from "react";
 
-const Key:FC = () => {
-    return(
+const Key: FC = () => {
+    const [notes, setNotes] = useState("");
+
+    // Load notes from localStorage when the component mounts
+    useEffect(() => {
+        const savedNotes = localStorage.getItem("userNotes");
+        if (savedNotes) {
+            setNotes(savedNotes);
+        }
+    }, []);
+
+    const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+        setNotes(e.target.value);
+    };
+
+    const handleSave = () => {
+        localStorage.setItem("userNotes", notes);
+        console.log("Saved notes:", notes);
+    };
+
+    return (
         <div className="border rounded-lg border-gray-300">
             <div className="flex justify-between p-3">
                 <p className="font-semibold md:text-2xl flex items-center">Key Notes</p>
-                <button className="bg-blue-500 text-white rounded-lg p-2 text-sm md:text-lg">Save</button>
+                <button onClick={handleSave} className="bg-blue-500 text-white rounded-lg p-2 text-sm md:text-lg">Save</button>
             </div>
-            <textarea spellCheck={false} name="postContent" placeholder="Write your thoughts here..." rows={5} className="rounded-lg border border-gray-200 
-            w-100 text-gray-500 p-2 md:w-140 focus:text-gray-800 focus:border-gray-500"/>
+            <textarea
+                value={notes}
+                onChange={handleChange}
+                spellCheck={false}
+                name="postContent"
+                placeholder="Write your thoughts here..."
+                rows={5}
+                className="rounded-lg border border-gray-200 w-100 text-gray-500 p-2 md:w-140 focus:text-gray-800 focus:border-gray-500"
+            />
         </div>
-    )
-}
+    );
+};
 
 export default Key;
+
+
