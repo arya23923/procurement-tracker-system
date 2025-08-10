@@ -44,7 +44,7 @@ const Sidebar: FC = () => {
         md:fixed md:left-10
       `}
     >
-      <button className="w-10 pr-3 md:w-20 md:pr-5 md:pb-8" onClick={() => setExpanded(!expanded)}>
+      <button className="w-10 pr-3 pt-5 md:w-20 md:pr-5 md:pb-8" onClick={() => setExpanded(!expanded)}>
         <img src={sidebar} alt="sidebar" />
       </button>
 
