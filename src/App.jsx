@@ -4,6 +4,7 @@ import Sidebar from './components/Sidebar'
 import Shortcut from './components/Shortcut'
 import Key from './components/Key'
 import Notification from './components/Notification'
+import Batch from './components/Batch'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           </div>
           <div className='flex flex-col flex-1 md:pl-5'>
             <Key />
+            <Batch />
           </div>
         </div>
       </div>
