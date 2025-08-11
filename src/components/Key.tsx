@@ -3,7 +3,6 @@ import { FC, useState, useEffect } from "react";
 const Key: FC = () => {
     const [notes, setNotes] = useState("");
 
-    // Load notes from localStorage when the component mounts
     useEffect(() => {
         const savedNotes = localStorage.getItem("userNotes");
         if (savedNotes) {
@@ -33,7 +32,7 @@ const Key: FC = () => {
                 name="postContent"
                 placeholder="Write your thoughts here..."
                 rows={5}
-                className="rounded-lg border border-gray-200 w-100 text-gray-500 p-2 md:w-140 focus:text-gray-800 focus:border-gray-500"
+                className="rounded-lg border border-gray-200 w-100 text-gray-500 text-sm p-2 md:text-lg md:w-140 focus:text-gray-800 focus:border-gray-500"
             />
         </div>
     );
