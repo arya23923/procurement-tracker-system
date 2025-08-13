@@ -22,7 +22,7 @@ const Key: FC = () => {
     return (
         <div className="border rounded-lg border-gray-300 shadow-lg shadow-emerald-100">
             <div className="flex justify-between p-3">
-                <p className="font-semibold bg-emerald-600 text-white rounded-lg p-5 pt-3 pb-3 md:text-2xl flex items-center">Key Notes</p>
+                <p className="font-semibold bg-emerald-600 text-white rounded-lg p-5 pt-3 pb-3 md:text-xl flex items-center">Key Notes</p>
                 <button onClick={handleSave} className="bg-blue-500 text-white rounded-lg p-2 text-sm md:text-lg">Save</button>
             </div>
             <textarea

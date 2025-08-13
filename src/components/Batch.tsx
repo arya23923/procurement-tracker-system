@@ -14,7 +14,7 @@ const Batch : FC = () => {
     ]
     return(
         <div className="flex flex-col items-start">
-            <p className="font-semibold bg-emerald-600 text-white rounded-lg p-5 pt-3 pb-3 md:text-2xl p-5">Batch Runs</p>
+            <p className="font-semibold bg-emerald-600 text-white rounded-lg p-5 pt-3 pb-3 md:text-xl p-5">Batch Runs</p>
             <table className="text-sm font-normal p-5 border rounded-lg border-gray-300 shadow-lg shadow-emerald-100 w-full md:text-lg">
                <thead className="font-normal p-5">
                     <tr> 

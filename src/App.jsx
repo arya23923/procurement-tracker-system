@@ -19,7 +19,7 @@ function App() {
             <Notification />
             <Graph />
           </div>
-          <div className='flex flex-col flex-1 md:pl-20'>
+          <div className='flex flex-col flex-1 space-y-10 h-full md:pl-20'>
             <Key />
             <Batch />
             <Graph />

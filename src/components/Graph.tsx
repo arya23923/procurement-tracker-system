@@ -28,7 +28,7 @@ const Graph : FC = () => {
 
     return(
         <div className="flex flex-col items-start pb-10">
-            <p className="font-semibold bg-emerald-600 rounded-lg text-white shadow-lg shadow-emerald-100 md:text-2xl p-5 pt-3 pb-3">Req vs Status</p>
+            <p className="font-semibold bg-emerald-600 rounded-lg text-white shadow-lg shadow-emerald-100 md:text-xl p-5 pt-3 pb-3">Req vs Status</p>
             <BarChart width={600} height={350} data={data} className="border rounded-lg border-gray-300 shadow-lg shadow-emerald-100">
                 <XAxis dataKey="key" stroke="#114d39ff" tick={{ fontSize: 15 }} angle={-45} textAnchor="end" height={80}/>
                 <YAxis />
