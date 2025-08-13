@@ -39,10 +39,9 @@ const Sidebar: FC = () => {
 
   return (
     <div
-      className={`ml-0 h-screen border-r-2 border-r-gray-300 transition-all duration-300 hover:bg-gray-100
+      className={`ml-0 h-screen pt-1 border-r-2 border-r-gray-300 transition-all duration-300 hover:bg-gray-100
         ${expanded ? 'w-64 md:w-75' : 'w-10 md:w-15 border-none'}
-        md:fixed md:left-10
-      `}
+        md:fixed md:left-10 md:pt-0`}
     >
       <button className="w-10 pr-3 pt-0 md:pt-4 md:w-20 md:pr-5 md:pb-8" onClick={() => setExpanded(!expanded)}>
         <img src={sidebar} alt="sidebar" />
